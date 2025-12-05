@@ -842,6 +842,7 @@ def main():
             # Audio recorder component - simple microphone icon
             audio_bytes = audio_recorder(
                 text="Click to record",
+                class_name="voice-section",
                 recording_color="#e53935",
                 neutral_color="#10B981",
                 icon_size="2x",
