@@ -757,22 +757,6 @@ def main():
     
     # Sidebar
     with st.sidebar:
-        st.markdown("## ⚙️ Configuration")
-        
-        # API Keys status
-        st.markdown("### 🔑 API Status")
-        
-        groq_status = "✅ Connected" if os.getenv("GROQ_API_KEY") else "❌ Missing"
-        bright_data_status = "✅ Connected" if os.getenv("BRIGHT_DATA_API_TOKEN") else "❌ Missing"
-        murf_status = "✅ Connected" if os.getenv("MURF_API_KEY") else "⚠️ Optional"
-        
-        st.markdown(f"""
-        - **GROQ API**: {groq_status}
-        - **Bright Data**: {bright_data_status}
-        - **Murf AI**: {murf_status}
-        """)
-        
-        st.markdown("---")
         
         # About section
         st.markdown("### 📖 About")
