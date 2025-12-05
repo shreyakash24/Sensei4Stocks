@@ -44,321 +44,306 @@ st.set_page_config(
 # Custom CSS for professional styling
 st.markdown("""
 <style>
-    /* Main container styling */
-    * {
-        color: #f5f5f5;
-    }
-    .stApp {
-            background-color: rgba(10, 31, 68, 1);
-            color: rgb(245, 245, 245);
-    }
-    a, mark {
-        color: #00e5e5 ;
-    }
-    a:hover {
-        color: #00e5e5 ;
-    }
-    
-    .main {
-        padding: 1rem 2rem;
-    }
-    
-    /* Header styling - Modern gradient with green/teal theme */
-    .header-container {
-        background: linear-gradient(135deg, #0D9488 0%, #059669 50%, #10B981 100%);
-        padding: 2rem;
-        border-radius: 15px;
-        margin-bottom: 2rem;
-        box-shadow: 0 8px 32px rgba(13, 148, 136, 0.3);
-    }
-    
-    .header-title {
-        color: white;
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin: 0;
-        text-align: center;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    
-    .header-subtitle {
-        color: #E0F2F1;
-        font-size: 1.1rem;
-        text-align: center;
-        margin-top: 0.5rem;
-    }
-    
-    /* Agent card styling */
-    .agent-card {
-        background: white;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin: 1rem 0;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        border-left: 4px solid #10B981;
-    }
-    
-    .agent-name {
-        font-weight: 600;
-        color: #0D9488;
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .agent-content {
-        color: #333;
-        line-height: 1.6;
-    }
-    
-    /* Status badges */
-    .status-badge {
-        display: inline-block;
-        padding: 0.25rem 0.75rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 500;
-    }
-    
-    .status-running {
-        background: #FEF3C7;
-        color: #D97706;
-    }
-    
-    .status-complete {
-        background: #D1FAE5;
-        color: #059669;
-    }
-    
-    /* Sidebar styling */
-    .sidebar .sidebar-content {
-        background: #F0FDF4;
-        color: black;
-    }
-    
-    /* Metric cards */
-    .metric-card {
-        background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-        padding: 1.5rem;
-        border-radius: 12px;
-        color: white;
-        text-align: center;
-    }
-    
-    /* Custom button */
-    .stButton>button {
-        background: linear-gradient(135deg, #0D9488 0%, #059669 100%);
-        color: white;
-        border: none;
-        padding: 0.75rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
-        width: 100%;
-    }
-    
-    .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
-    }
-    
-    /* Progress indicator */
-    .progress-step {
-        display: flex;
-        align-items: center;
-        padding: 0.5rem;
-        margin: 0.25rem 0;
-        color: black;
-    }
-    
-    .progress-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    
-    .dot-active {
-        background: #10B981;
-    }
-    
-    .dot-pending {
-        background: #E5E7EB;
-    }
-    
-    /* Info boxes */
-    .info-box {
-        background: #ECFDF5;
-        border: 1px solid #A7F3D0;
-        border-radius: 10px;
-        padding: 1rem;
-        margin: 1rem 0;
-        color: black;
-    }
-    
-    /* Footer */
-    .footer {
-        text-align: center;
-        color: #6B7280;
-        padding: 2rem;
-        margin-top: 2rem;
-        border-top: 1px solid #E5E7EB;
-    }
-    
-    /* Voice input section styling */
-    .voice-section {
-        background: rgba(10, 31, 68, 1);
-        padding: 1.5rem;
-        margin: 1rem 0;
-    }
-    
-    /* Agent Circles Container */
+/* -------------------- GLOBAL -------------------- */
+body, .stApp {
+    background-color: rgba(10, 31, 68, 1);
+    color: #f5f5f5;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* -------------------- LINKS -------------------- */
+a, mark {
+    color: #00e5e5;
+}
+a:hover {
+    color: #00e5e5;
+}
+
+/* -------------------- MAIN CONTAINER -------------------- */
+.main {
+    padding: 1rem 2rem;
+}
+
+/* -------------------- HEADER -------------------- */
+.header-container {
+    background: linear-gradient(135deg, #0D9488 0%, #059669 50%, #10B981 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(13, 148, 136, 0.3);
+}
+.header-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+.header-subtitle {
+    color: #E0F2F1;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* -------------------- AGENT CARD -------------------- */
+.agent-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #10B981;
+}
+.agent-name {
+    font-weight: 600;
+    color: #0D9488;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.agent-content {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* -------------------- STATUS BADGES -------------------- */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+.status-running {
+    background: #FEF3C7;
+    color: #D97706;
+}
+.status-complete {
+    background: #D1FAE5;
+    color: #059669;
+}
+
+/* -------------------- SIDEBAR -------------------- */
+.stSidebar, 
+.stSidebar * {
+    color: black !important;
+}
+.stSidebar .sidebar-content {
+    background: #F0FDF4 !important;
+}
+
+/* -------------------- METRIC CARDS -------------------- */
+.metric-card {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    padding: 1.5rem;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+}
+
+/* -------------------- BUTTONS -------------------- */
+.stButton>button {
+    background: linear-gradient(135deg, #0D9488 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+/* -------------------- PROGRESS -------------------- */
+.progress-step {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0.25rem 0;
+    color: black;
+}
+.progress-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.dot-active { background: #10B981; }
+.dot-pending { background: #E5E7EB; }
+
+/* -------------------- INFO BOX -------------------- */
+.info-box {
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem 0;
+    color: black;
+}
+
+/* -------------------- FOOTER -------------------- */
+.footer {
+    text-align: center;
+    color: #6B7280;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+/* -------------------- VOICE INPUT SECTION -------------------- */
+.voice-section {
+    background: rgba(10, 31, 68, 1);
+    padding: 1.5rem;
+    margin: 1rem 0;
+}
+.voice-section, 
+.voice-section .stTextInput, 
+.voice-section .stTextInput input {
+    background-color: rgba(10, 31, 68, 1) !important;
+    color: white !important;
+}
+
+/* -------------------- AGENT CIRCLES -------------------- */
+.agent-circles-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+    border-radius: 15px;
+    border: 1px solid #A7F3D0;
+    flex-wrap: wrap;
+}
+.agent-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.agent-circle-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: white;
+    border: 3px solid #E5E7EB;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+.agent-circle-label {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #6B7280;
+    text-align: center;
+    max-width: 100px;
+}
+.agent-circle.active .agent-circle-icon {
+    border-color: #10B981;
+    box-shadow: 0 0 0 4px rgba(16,185,129,0.3),0 8px 25px rgba(16,185,129,0.4);
+    transform: scale(1.1);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+.agent-circle.active .agent-circle-label {
+    color: #059669;
+    font-weight: 600;
+}
+@keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 4px rgba(16,185,129,0.3),0 8px 25px rgba(16,185,129,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(16,185,129,0.2),0 8px 30px rgba(16,185,129,0.5); }
+}
+
+/* -------------------- VOICE OUTPUT -------------------- */
+.voice-output-section {
+    background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid #A7F3D0;
+}
+.voice-output-title {
+    text-align: center;
+    color: #0D9488;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.voice-play-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #0D9488 0%, #059669 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(13,148,136,0.3);
+}
+.voice-play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13,148,136,0.4);
+}
+.speaking-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #059669;
+    font-weight: 500;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+.speaking-indicator .sound-wave {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+.speaking-indicator .sound-wave span {
+    display: inline-block;
+    width: 3px;
+    background: #10B981;
+    animation: soundWave 0.5s ease-in-out infinite;
+}
+.speaking-indicator .sound-wave span:nth-child(1) { height: 8px; animation-delay: 0s; }
+.speaking-indicator .sound-wave span:nth-child(2) { height: 12px; animation-delay: 0.1s; }
+.speaking-indicator .sound-wave span:nth-child(3) { height: 16px; animation-delay: 0.2s; }
+.speaking-indicator .sound-wave span:nth-child(4) { height: 12px; animation-delay: 0.3s; }
+.speaking-indicator .sound-wave span:nth-child(5) { height: 8px; animation-delay: 0.4s; }
+@keyframes soundWave {
+    0%,100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.5); }
+}
+
+/* -------------------- MOBILE RESPONSIVE -------------------- */
+@media (max-width: 768px) {
     .agent-circles-container {
-        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        padding: 2rem;
-        margin: 1.5rem 0;
-        background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-        border-radius: 15px;
-        border: 1px solid #A7F3D0;
+        gap: 1rem;
+        padding: 1rem;
     }
-    
-    /* Agent Circle */
     .agent-circle {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transition: all 0.3s ease;
-    }
-    
-    .agent-circle-icon {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        background: white;
-        border: 3px solid #E5E7EB;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .agent-circle-label {
-        margin-top: 0.75rem;
-        font-size: 0.85rem;
-        font-weight: 500;
-        color: #6B7280;
-        text-align: center;
-        max-width: 100px;
-    }
-    
-    /* Agent Circle Active/Highlighted State */
-    .agent-circle.active .agent-circle-icon {
-        border-color: #10B981;
-        box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3), 0 8px 25px rgba(16, 185, 129, 0.4);
-        transform: scale(1.1);
-        animation: pulse 1.5s ease-in-out infinite;
-    }
-    
-    .agent-circle.active .agent-circle-label {
-        color: #059669;
-        font-weight: 600;
-    }
-    
-    /* Pulse animation for active agent */
-    @keyframes pulse {
-        0% {
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3), 0 8px 25px rgba(16, 185, 129, 0.4);
-        }
-        50% {
-            box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.2), 0 8px 30px rgba(16, 185, 129, 0.5);
-        }
-        100% {
-            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3), 0 8px 25px rgba(16, 185, 129, 0.4);
-        }
-    }
-    
-    /* Voice Output Section */
-    .voice-output-section {
-        background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%);
-        border-radius: 15px;
-        padding: 1.5rem;
-        margin: 1rem 0;
-        border: 1px solid #A7F3D0;
-    }
-    
-    .voice-output-title {
-        text-align: center;
-        color: #0D9488;
-        font-size: 1.25rem;
-        font-weight: 600;
         margin-bottom: 1rem;
     }
-    
-    /* Voice Button Styling */
-    .voice-play-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        background: linear-gradient(135deg, #0D9488 0%, #059669 100%);
-        color: white;
-        border: none;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin: 0 auto;
-        box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
-    }
-    
-    .voice-play-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
-    }
-    
-    /* Agent Speaking Indicator */
-    .speaking-indicator {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        color: #059669;
-        font-weight: 500;
-        margin-top: 1rem;
-        font-size: 0.95rem;
-    }
-    
-    .speaking-indicator .sound-wave {
-        display: inline-flex;
-        align-items: center;
-        gap: 2px;
-    }
-    
-    .speaking-indicator .sound-wave span {
-        display: inline-block;
-        width: 3px;
-        background: #10B981;
-        animation: soundWave 0.5s ease-in-out infinite;
-    }
-    
-    .speaking-indicator .sound-wave span:nth-child(1) { height: 8px; animation-delay: 0s; }
-    .speaking-indicator .sound-wave span:nth-child(2) { height: 12px; animation-delay: 0.1s; }
-    .speaking-indicator .sound-wave span:nth-child(3) { height: 16px; animation-delay: 0.2s; }
-    .speaking-indicator .sound-wave span:nth-child(4) { height: 12px; animation-delay: 0.3s; }
-    .speaking-indicator .sound-wave span:nth-child(5) { height: 8px; animation-delay: 0.4s; }
-    
-    @keyframes soundWave {
-        0%, 100% { transform: scaleY(1); }
-        50% { transform: scaleY(1.5); }
-    }
+}
 </style>
 """, unsafe_allow_html=True)
 
