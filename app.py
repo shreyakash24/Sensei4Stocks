@@ -132,6 +132,7 @@ st.markdown("""
     /* Sidebar styling */
     .sidebar .sidebar-content {
         background: #F0FDF4;
+        color: black;
     }
     
     /* Metric cards */
