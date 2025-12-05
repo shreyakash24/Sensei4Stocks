@@ -834,7 +834,7 @@ def main():
         # Try audio-recorder-streamlit first (more reliable)
         try:
             from audio_recorder_streamlit import audio_recorder
-            st.markdown('<div class="voice-section">', unsafe_allow_html=True)
+            st.markdown('<div class="voice-section style="background-color:#0A1F44; padding:1rem; border-radius:12px;">', unsafe_allow_html=True)
             # Audio recorder component - simple microphone icon
             audio_bytes = audio_recorder(
                 text="Click to record",
