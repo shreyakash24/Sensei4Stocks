@@ -206,7 +206,6 @@ a:hover {
 .voice-section .stTextInput, 
 .voice-section .stTextInput input {
     background-color: rgba(10, 31, 68, 1) !important;
-    color: white !important;
 }
 
 /* -------------------- AGENT CIRCLES -------------------- */
@@ -838,18 +837,17 @@ def main():
         # Try audio-recorder-streamlit first (more reliable)
         try:
             from audio_recorder_streamlit import audio_recorder
-            
+            st.markdown('<div class="voice-section">', unsafe_allow_html=True)
             # Audio recorder component - simple microphone icon
             audio_bytes = audio_recorder(
                 text="Click to record",
-                class_name="voice-section",
                 recording_color="#e53935",
                 neutral_color="#10B981",
                 icon_size="2x",
                 pause_threshold=2.0,  # Auto-stop after 2 seconds of silence
             )
             recorder_available = True
-            
+            st.markdown('</div>', unsafe_allow_html=True)
         except ImportError:
             # Fallback to st_audiorec if audio-recorder-streamlit is not available
             try:
