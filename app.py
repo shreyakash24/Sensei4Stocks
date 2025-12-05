@@ -198,15 +198,12 @@ a:hover {
 
 /* -------------------- VOICE INPUT SECTION -------------------- */
 .voice-section {
-    background: rgba(10, 31, 68, 1);
-    padding: 1.5rem;
+    background-color: rgba(10, 31, 68, 1) !important; /* dark blue */
+    padding: 1rem;
+    border-radius: 12px;
     margin: 1rem 0;
 }
-.voice-section, 
-.voice-section .stTextInput, 
-.voice-section .stTextInput input {
-    background-color: rgba(10, 31, 68, 1) !important;
-}
+
 
 /* -------------------- AGENT CIRCLES -------------------- */
 .agent-circles-container {
